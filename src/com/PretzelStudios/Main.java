@@ -7,13 +7,15 @@ public class Main {
         //Alpha positions
         char[] rawString = "Hello".toUpperCase().toCharArray();
         for (int i = 0; i < rawString.length; i++) {
-            System.out.println((int) rawString[i] - 65);
+            System.out.print((int) rawString[i] - 65 + " ");
         }
+        System.out.println(" ");
 
         //Ceasar shift
         for (int i = 0; i < rawString.length; i++) {
-            System.out.println((char) (rawString[i] + 3));
+            System.out.print((char) (rawString[i] + 3) + " ");
         }
+        System.out.println(" ");
 
         //Shopping cart
         double iPhoneXSMaxPrice = 1449.00;
@@ -60,6 +62,9 @@ public class Main {
             }
             System.out.println();
         }
+
+
+
 
     }
 }
