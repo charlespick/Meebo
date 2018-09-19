@@ -1,5 +1,8 @@
 package com.PretzelStudios;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -118,6 +121,16 @@ public class Main {
             i = i + 1;
         }
 
+        try {
+            FileWriter writer = new FileWriter("Data.txt", true);
+            BufferedWriter internalWriter = new BufferedWriter(writer);
+            internalWriter.write("Hello World");
+            internalWriter.newLine();
+            internalWriter.flush();
+            System.out.println("I did it Mommy!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }
