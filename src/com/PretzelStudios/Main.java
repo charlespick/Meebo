@@ -54,15 +54,69 @@ public class Main {
         System.out.println(factorial);
 
         //Multiplication table
-        System.out.println("  1 2 3 4 5");
-        for (int a = 1; a <= 5; a++) {
-            System.out.print(a + ":");
-            for (int b = 1; b <= 5; b++) {
+        System.out.println("  1 2 3 4 5 6 7 8 9");
+        System.out.println("-------------------");
+        for (int a = 1; a <= 9; a++) {
+            System.out.print(a + "|");
+            for (int b = 1; b <= 9; b++) {
                 System.out.print(a * b + " ");
             }
             System.out.println();
+
         }
 
+
+//      Homework 9/18
+//      System.out.println(count*2);
+//      System.out.println(count += 15);
+//      System.out.println(30-(count*10));
+//      System.out.println(-7+(4*count));
+//      System.out.println(97-(count*3));
+
+
+        for (int i = -4; i < 87; i += 18) {
+            System.out.println(i);
+        }
+
+//      4, 2, 1
+
+//      24 1
+//      22 2
+//      19 3
+//      15 4
+//      10 5
+
+/*      Something like this
+        +---+
+        \   /
+        /   \
+        \   /
+        /   \
+        \   /
+        /   \
+        +---+
+*/
+        int lastNum = 1;
+        for (int i = 3; lastNum <= 100; i += 2) {
+            System.out.print(lastNum + " ");
+            lastNum += i;
+
+        }
+
+
+        long firstNum = 1;
+        long secondNum = 2;
+        long thirdNum;
+        System.out.println(firstNum);
+        System.out.println(secondNum);
+        int i = 0;
+        while (i < 100) {
+            thirdNum = firstNum + secondNum;
+            System.out.println(thirdNum);
+            firstNum = secondNum;
+            secondNum = thirdNum;
+            i = i + 1;
+        }
 
 
 
