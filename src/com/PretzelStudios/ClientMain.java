@@ -1,11 +1,12 @@
 package com.PretzelStudios;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+import java.io.*;
+import java.net.InetAddress;
+import java.net.Socket;
 
-public class Main {
+public class ClientMain {
 
-    public static void main(String[] args) {
+    public static void startClient() {
 
         //Alpha positions
         char[] rawString = "Hello".toUpperCase().toCharArray();
@@ -131,6 +132,16 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        System.out.println("Starting client /n Connecting to server...");
+        try{
+            Socket server = new Socket("165.227.240.242", 580);
+            PrintWriter out = new PrintWriter(server.getOutputStream(), true);
+            out.println("Hi, is anyone home?");
+        }catch (IOException exc){
+            exc.printStackTrace();
+        }
+
 
 
     }
