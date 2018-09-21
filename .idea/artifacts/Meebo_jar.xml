@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Meebo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Meebo_jar</output-path>
+    <root id="archive" name="Meebo.jar">
+      <element id="module-output" name="Meebo" />
+    </root>
+  </artifact>
+</component>
