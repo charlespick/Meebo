@@ -132,16 +132,34 @@ public class ClientMain {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+PrintWriter out = null;
+        BufferedReader in = null;
         System.out.println("Starting client\nConnecting to server...");
         try{
             Socket server = new Socket("178.128.130.87", 5850);
-            PrintWriter out = new PrintWriter(server.getOutputStream(), true);
+            out = new PrintWriter(server.getOutputStream(), true);
+            in = new BufferedReader(new InputStreamReader(server.getInputStream()));
             out.println("Hi, is anyone home?");
-        }catch (IOException exc){
+            Thread.sleep(1000);
+            System.out.println(in.readLine());
+        }catch (Exception exc){
             exc.printStackTrace();
         }
 
+        try {
+            for (int x = 0; x < 100; x++) {
+                System.out.println("Sending " + x);
+                out.println(x);
+                System.out.println(x + "sent");
+                Thread.sleep(4000);
+                System.out.println("Waiting for responce");
+                String recived = in.readLine();
+                System.out.println("Recived " + recived);
+                x = Integer.parseInt(recived);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
 
     }
