@@ -28,7 +28,7 @@ public class ServerMain {
                 int b = Integer.parseInt(recived) + 1;
 
 
-                Thread.sleep(1000);
+//                Thread.sleep(1000);
                 out.println(b);
                 System.out.println("Sent " + b);
 //                System.out.println(b);
