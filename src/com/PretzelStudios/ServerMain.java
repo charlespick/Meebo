@@ -10,7 +10,7 @@ public class ServerMain {
     public static void startServer() {
         System.out.println("Starting server");
         try {
-            ServerSocket socket = new ServerSocket(580);
+            ServerSocket socket = new ServerSocket(5850);
             System.out.println("Waiting for client to connect");
             Socket client = socket.accept();
             System.out.println("Client connecting");

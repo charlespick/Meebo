@@ -133,9 +133,9 @@ public class ClientMain {
             e.printStackTrace();
         }
 
-        System.out.println("Starting client /n Connecting to server...");
+        System.out.println("Starting client\nConnecting to server...");
         try{
-            Socket server = new Socket("165.227.240.242", 580);
+            Socket server = new Socket("178.128.130.87", 5850);
             PrintWriter out = new PrintWriter(server.getOutputStream(), true);
             out.println("Hi, is anyone home?");
         }catch (IOException exc){
