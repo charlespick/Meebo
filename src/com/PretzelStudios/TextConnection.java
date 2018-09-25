@@ -13,9 +13,16 @@ public class TextConnection {
     private BufferedReader in = null;
 
     public TextConnection(Socket endpoint) {
-        server = endpoint;
-        System.out.println("Connected to " + server.getInetAddress());
-    }
+        try {
+            server = endpoint;
+            out = new PrintWriter(server.getOutputStream(), true);
+            in = new BufferedReader(new InputStreamReader(server.getInputStream()));
+            System.out.println("Connected to " + server.getInetAddress());
+        }catch (IOException ioe){
+            System.out.println("Connection refused");
+            ioe.printStackTrace();
+        }
+        }
 
     public TextConnection(String host, int port) {
         try {
@@ -34,7 +41,7 @@ public class TextConnection {
     }
 
     public void sendMsg(String msg) {
-        out.println();
+        out.println(msg);
     }
 
     public String retreiveLastMsg() {
