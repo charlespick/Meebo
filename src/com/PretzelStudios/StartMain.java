@@ -122,15 +122,15 @@ public class StartMain {
         }
     }
 
-    public static void filtExperiment() {
+    public void filtExperiment(String write) {
         try {
             FileWriter writer = new FileWriter("Data.txt", true);
             BufferedWriter internalWriter = new BufferedWriter(writer);
-            internalWriter.write("Hello World");
+            internalWriter.write(write);
             internalWriter.newLine();
             internalWriter.flush();
-            System.out.println("I did it Mommy!");
-        } catch (Exception e) {
+            internalWriter.close();
+        }catch (Exception e) {
             e.printStackTrace();
         }
     }

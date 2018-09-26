@@ -12,9 +12,11 @@ public class ServerMain {
         try {
             ServerSocket socket = new ServerSocket(5850);
             System.out.println("Waiting for client to connect");
-            ServerThread thread = new ServerThread(new TextConnection(socket.accept()));
-            thread.start();
-            Thread.sleep(10000);
+            ServerThread thread1 = new ServerThread(new TextConnection(socket.accept()));
+            thread1.start();
+            ServerThread thread2 = new ServerThread((new TextConnection(socket.accept())));
+            thread2.start();
+            Thread.sleep(1000);
             System.out.println("Thread 1 is still running!");
         } catch (IOException ioe) {
             ioe.printStackTrace();

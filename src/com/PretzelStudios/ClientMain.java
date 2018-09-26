@@ -18,7 +18,6 @@ public class ClientMain {
             ie.printStackTrace();
         }
 
-
     }
 
 
