@@ -44,7 +44,7 @@ public class TextConnection {
         out.println(msg);
     }
 
-    public String retreiveLastMsg() {
+    public String retrieveLastMsg() {
         try {
             return in.readLine();
         } catch (IOException e) {

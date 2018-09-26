@@ -10,17 +10,22 @@ public class ServerThread extends Thread {
     public void run() {
         System.out.println("Thread " + Thread.currentThread().getId() + " is running!");
         while (true) {
-            try {
-                Thread.sleep(300);
-            } catch (InterruptedException ie) {
-                ie.printStackTrace();
-            }
-            String content = connection.retreiveLastMsg();
-            if (content == null) {
-                System.out.println("No new messages");
-            } else {
-                System.out.println(connection.retreiveLastMsg());
-            }
+            System.out.println("Waiting for message");
+
+
+            System.out.println(connection.retrieveLastMsg());
+
+
+
+
+
+
+
+
+
+
+
+//
         }
     }
 
