@@ -12,17 +12,18 @@ public class TextConnection {
     private PrintWriter out = null;
     private BufferedReader in = null;
 
-    public TextConnection(Socket endpoint) {
+
+    public TextConnection(Socket server) {
         try {
-            server = endpoint;
+            this.server = server;
             out = new PrintWriter(server.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(server.getInputStream()));
             System.out.println("Connected to " + server.getInetAddress());
-        }catch (IOException ioe){
+        } catch (IOException ioe) {
             System.out.println("Connection refused");
             ioe.printStackTrace();
         }
-        }
+    }
 
     public TextConnection(String host, int port) {
         try {
@@ -52,4 +53,19 @@ public class TextConnection {
             return "No message available";
         }
     }
+
+    public boolean isConnected() {
+        return !server.isClosed();
+    }
+
+    public void close() {
+        try {
+            server.close();
+            System.out.println("Connection closed");
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+
+    }
+
 }
