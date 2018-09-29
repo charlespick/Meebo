@@ -5,7 +5,7 @@ public class ClientMain {
 
     public static void startClient() {
         System.out.println("Starting client\nConnecting to server...");
-        TextConnection connection = new TextConnection("178.128.130.87", 5850);
+        TextConnection connection = new TextConnection("resource.xijx.xyz", 5850);
         try {
             Thread.sleep(3000);
             connection.sendMsg("This is the only message");
