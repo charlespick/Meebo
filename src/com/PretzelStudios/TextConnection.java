@@ -54,9 +54,7 @@ public class TextConnection {
         }
     }
 
-    public boolean isConnected() {
-        return !server.isClosed();
-    }
+    public boolean isConnected() { return !server.isClosed(); }
 
     public void close() {
         try {
